@@ -1,0 +1,358 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">   <title>NZ Lotto Stats</title>
+</head>
+<body>
+    <div class="hamburger-menu">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+    </div>
+
+    <div class="menu-container">
+        <section class="sidebar">
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="#home" class="menu-link" id="home-link">Home</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#find-those-numbers" class="menu-link" id="numbers-link">Numbers</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#about" class="menu-link" id="about-link">About</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <section id="home" class="section-1">
+        <h1 class="section-heading">Stats for the NZ Lotto</h1>
+
+        <div class="description-wrapper">
+            <article class="description">
+                Find interesting facts and figures about the lotto draw numbers to help choose those winning numbers
+            </article>
+            
+            <a class="find-numbers-btn" href="#find-those-numbers">Find Numbers</a>
+        </div>
+
+        <img class="background-image" src="./img/lotto balls 900x600.png" alt="lotto balls background" />
+        
+        <div class="balls-container">
+            <div class="ball" id="ball-1"><span class="ball-number">5</span></div>
+            <div class="ball" id="ball-2"><span class="ball-number">11</span></div>
+            <div class="ball" id="ball-3"><span class="ball-number">12</span></div>
+            <div class="ball" id="ball-4"><span class="ball-number">28</span></div>
+            <div class="ball" id="ball-5"><span class="ball-number">33</span></div>
+            <div class="ball" id="ball-6"><span class="ball-number">39</span></div>
+        </div>
+    </section>
+
+    <section id="find-those-numbers" class="stats-container">
+        <h1 class="section-heading">Find Those Numbers</h1>
+
+        <img class="background-image" src="./img/lotto balls 900x600.png" alt="Falling lotto balls" />
+
+        <!--<div class="description-wrapper">
+            <article class="description">
+                View Results, Common Pairs, and Patterns
+            </article>
+        </div>-->
+
+        <div class="stats-layout">
+            <div class="stats-layout-container-item">
+
+                <div class="header draw-results-header">
+                    <div class="draw-results-move-date" id="draw-result-move-date-range-forward"></div>
+                    <div class="title">Results</div>
+                    <div class="draw-results-move-date" id="draw-result-move-date-range-back"></div>
+                </div>
+
+                <div class="draw-results-container">
+                    <div class="draw-result-date" id="draw1-date">3rd Apr</div>
+                    <div class="draw-result-balls-container">
+                        <div class="ball results-ball" id="draw1-ball1-container"><span id="draw1-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw1-ball2-container"><span id="draw1-ball2" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw1-ball3-container"><span id="draw1-ball3" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw1-ball4-container"><span id="draw1-ball4" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw1-ball5-container"><span id="draw1-ball5" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw1-ball6-container"><span id="draw1-ball6" class="ball-number"></span></div>
+                        <div class=" ball results-ball bonus-ball" id="draw1-bonus-ball-container"><span id="draw1-bonus-ball" class="ball-number"></span></div>
+                        <div class="ball results-ball single-digit-color"><span id="draw1-power-ball" class="ball-number"></span></div>
+                    </div>
+                </div>
+
+                <div class="draw-results-container">
+                    <div class="draw-result-date" id="draw2-date">3rd Apr</div>
+                    <div class="draw-result-balls-container">
+                        <div class="ball results-ball" id="draw2-ball1-container"><span id="draw2-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw2-ball2-container"><span id="draw2-ball2" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw2-ball3-container"><span id="draw2-ball3" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw2-ball4-container"><span id="draw2-ball4" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw2-ball5-container"><span id="draw2-ball5" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw2-ball6-container"><span id="draw2-ball6" class="ball-number"></span></div>
+                        <div class=" ball results-ball bonus-ball" id="draw2-bonus-ball-container"><span id="draw2-bonus-ball" class="ball-number"></span></div>
+                        <div class="ball results-ball single-digit-color"><span id="draw2-power-ball" class="ball-number"></span></div>
+                    </div>
+                </div>
+
+                <div class="draw-results-container">
+                    <div class="draw-result-date" id="draw3-date">3rd Apr</div>
+                    <div class="draw-result-balls-container">
+                        <div class="ball results-ball" id="draw3-ball1-container"><span id="draw3-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw3-ball2-container"><span id="draw3-ball2" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw3-ball3-container"><span id="draw3-ball3" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw3-ball4-container"><span id="draw3-ball4" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw3-ball5-container"><span id="draw3-ball5" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw3-ball6-container"><span id="draw3-ball6" class="ball-number"></span></div>
+                        <div class=" ball results-ball bonus-ball" id="draw3-bonus-ball-container"><span id="draw3-bonus-ball" class="ball-number"></span></div>
+                        <div class="ball results-ball single-digit-color"><span id="draw3-power-ball" class="ball-number"></span></div>
+                    </div>
+                </div>
+
+                <div class="draw-results-container">
+                    <div class="draw-result-date" id="draw4-date">3rd Apr</div>
+                    <div class="draw-result-balls-container">
+                        <div class="ball results-ball" id="draw4-ball1-container"><span id="draw4-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw4-ball2-container"><span id="draw4-ball2" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw4-ball3-container"><span id="draw4-ball3" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw4-ball4-container"><span id="draw4-ball4" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw4-ball5-container"><span id="draw4-ball5" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw4-ball6-container"><span id="draw4-ball6" class="ball-number"></span></div>
+                        <div class=" ball results-ball bonus-ball" id="draw4-bonus-ball-container"><span id="draw4-bonus-ball" class="ball-number"></span></div>
+                        <div class="ball results-ball single-digit-color"><span id="draw4-power-ball" class="ball-number"></span></div>
+                    </div>
+                </div>
+
+                <div class="draw-results-container">
+                    <div class="draw-result-date" id="draw5-date">3rd Apr</div>
+                    <div class="draw-result-balls-container">
+                        <div class="ball results-ball" id="draw5-ball1-container"><span id="draw5-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw5-ball2-container"><span id="draw5-ball2" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw5-ball3-container"><span id="draw5-ball3" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw5-ball4-container"><span id="draw5-ball4" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw5-ball5-container"><span id="draw5-ball5" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw5-ball6-container"><span id="draw5-ball6" class="ball-number"></span></div>
+                        <div class=" ball results-ball bonus-ball" id="draw5-bonus-ball-container"><span id="draw5-bonus-ball" class="ball-number"></span></div>
+                        <div class="ball results-ball single-digit-color"><span id="draw5-power-ball" class="ball-number"></span></div>
+                    </div>
+                </div>
+
+                <div class="draw-results-container">
+                    <div class="draw-result-date" id="draw6-date"></div>
+                    <div class="draw-result-balls-container">
+                        <div class="ball results-ball" id="draw6-ball1-container"><span id="draw6-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw6-ball2-container"><span id="draw6-ball2" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw6-ball3-container"><span id="draw6-ball3" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw6-ball4-container"><span id="draw6-ball4" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw6-ball5-container"><span id="draw6-ball5" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="draw6-ball6-container"><span id="draw6-ball6" class="ball-number"></span></div>
+                        <div class=" ball results-ball bonus-ball" id="draw6-bonus-ball-container"><span id="draw6-bonus-ball" class="ball-number"></span></div>
+                        <div class="ball results-ball single-digit-color"><span id="draw6-power-ball" class="ball-number"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-layout-container-item">
+                <div class="header common-pairs-header">
+                    <div class="title">Common Pairs</div>
+                </div>
+                <div class="common-pair-container">
+                    <div class="common-pair-balls-container">
+                        <div class="ball results-ball" id="pair-pos1-ball1-container"><span id="pair-pos1-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="pair-pos1-ball2-container"><span id="pair-pos1-ball2" class="ball-number"></span></div>
+                        <div class="common-pair-count-container"><span class="common-pair-count" id="pair-pos1-count"> x10</span></div>
+                    </div>
+                </div>
+                <div class="common-pair-container">
+                    <div class="common-pair-balls-container">
+                        <div class="ball results-ball" id="pair-pos2-ball1-container"><span id="pair-pos2-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="pair-pos2-ball2-container"><span id="pair-pos2-ball2" class="ball-number"></span></div>
+                        <div class="common-pair-count-container"><span class="common-pair-count" id="pair-pos2-count"> x10</span></div>
+                    </div>
+                </div>
+                <div class="common-pair-container">
+                    <div class="common-pair-balls-container">
+                        <div class="ball results-ball" id="pair-pos3-ball1-container"><span id="pair-pos3-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="pair-pos3-ball2-container"><span id="pair-pos3-ball2" class="ball-number"></span></div>
+                        <div class="common-pair-count-container"><span class="common-pair-count" id="pair-pos3-count"> x10</span></div>
+                    </div>
+                </div>
+                <div class="common-pair-container">
+                    <div class="common-pair-balls-container">
+                        <div class="ball results-ball" id="pair-pos4-ball1-container"><span id="pair-pos4-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="pair-pos4-ball2-container"><span id="pair-pos4-ball2" class="ball-number"></span></div>
+                        <div class="common-pair-count-container"><span class="common-pair-count" id="pair-pos4-count"> x10</span></div>
+                    </div>
+                </div>
+                <div class="common-pair-container">
+                    <div class="common-pair-balls-container">
+                        <div class="ball results-ball" id="pair-pos5-ball1-container"><span id="pair-pos5-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="pair-pos5-ball2-container"><span id="pair-pos5-ball2" class="ball-number"></span></div>
+                        <div class="common-pair-count-container"><span class="common-pair-count" id="pair-pos5-count"> x10</span></div>
+                    </div>
+                </div>
+                <div class="common-pair-container">
+                    <div class="common-pair-balls-container">
+                        <div class="ball results-ball" id="pair-pos6-ball1-container"><span id="pair-pos6-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="pair-pos6-ball2-container"><span id="pair-pos6-ball2" class="ball-number"></span></div>
+                        <div class="common-pair-count-container"><span class="common-pair-count" id="pair-pos6-count"> x10</span></div>
+                    </div>
+                </div>
+                <div class="common-pair-container">
+                    <div class="common-pair-balls-container">
+                        <div class="ball results-ball" id="pair-pos7-ball1-container"><span id="pair-pos7-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="pair-pos7-ball2-container"><span id="pair-pos7-ball2" class="ball-number"></span></div>
+                        <div class="common-pair-count-container"><span class="common-pair-count" id="pair-pos7-count"> x10</span></div>
+                    </div>
+                </div>
+                <div class="common-pair-container">
+                    <div class="common-pair-balls-container">
+                        <div class="ball results-ball" id="pair-pos8-ball1-container"><span id="pair-pos8-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="pair-pos8-ball2-container"><span id="pair-pos8-ball2" class="ball-number"></span></div>
+                        <div class="common-pair-count-container"><span class="common-pair-count" id="pair-pos8-count"> x10</span></div>
+                    </div>
+                </div>
+                <div class="common-pair-container">
+                    <div class="common-pair-balls-container">
+                        <div class="ball results-ball" id="pair-pos9-ball1-container"><span id="pair-pos9-ball1" class="ball-number"></span></div>
+                        <div class="ball results-ball" id="pair-pos9-ball2-container"><span id="pair-pos9-ball2" class="ball-number"></span></div>
+                        <div class="common-pair-count-container"><span class="common-pair-count" id="pair-pos9-count"> x10</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-layout-container-item">
+                <div class="header patterns-header">
+                    <div class="title">Patterns</div>
+                </div>
+                <div class="paterns-description">(1-10) - (11-20) - (21-30) - (31-40)</div>
+                <div class="patterns-container">
+                    <div class="patterns-balls-container">
+                        <div class="ball results-ball single-digit-color" id="pattern-pos1-ball1-container"><span id="pattern-pos1-ball1" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball ten-digit-color" id="pattern-pos1-ball2-container"><span id="pattern-pos1-ball2" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball twenty-digit-color" id="pattern-pos1-ball3-container"><span id="pattern-pos1-ball3" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball thirty-digit-color" id="pattern-pos1-ball4-container"><span id="pattern-pos1-ball4" class="ball-number"></span></div>
+                        <div class="pattern-count-container"><span class="pattern-count" id="pattern-pos1-count"> x 0</span></div>
+                    </div>
+                </div>
+
+                <div class="patterns-container">
+                    <div class="patterns-balls-container">
+                        <div class="ball results-ball single-digit-color" id="pattern-pos2-ball1-container"><span id="pattern-pos2-ball1" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball ten-digit-color" id="pattern-pos2-ball2-container"><span id="pattern-pos2-ball2" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball twenty-digit-color" id="pattern-pos2-ball3-container"><span id="pattern-pos2-ball3" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball thirty-digit-color" id="pattern-pos2-ball4-container"><span id="pattern-pos2-ball4" class="ball-number"></span></div>
+                        <div class="pattern-count-container"><span class="pattern-count" id="pattern-pos2-count"> x 0</span></div>
+                    </div>
+                </div>
+
+                <div class="patterns-container">
+                    <div class="patterns-balls-container">
+                        <div class="ball results-ball single-digit-color" id="pattern-pos3-ball1-container"><span id="pattern-pos3-ball1" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball ten-digit-color" id="pattern-pos3-ball2-container"><span id="pattern-pos3-ball2" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball twenty-digit-color" id="pattern-pos3-ball3-container"><span id="pattern-pos3-ball3" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball thirty-digit-color" id="pattern-pos3-ball4-container"><span id="pattern-pos3-ball4" class="ball-number"></span></div>
+                        <div class="pattern-count-container"><span class="pattern-count" id="pattern-pos3-count"> x 0</span></div>
+                    </div>
+                </div>
+
+                <div class="patterns-container">
+                    <div class="patterns-balls-container">
+                        <div class="ball results-ball single-digit-color" id="pattern-pos4-ball1-container"><span id="pattern-pos4-ball1" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball ten-digit-color" id="pattern-pos4-ball2-container"><span id="pattern-pos4-ball2" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball twenty-digit-color" id="pattern-pos4-ball3-container"><span id="pattern-pos4-ball3" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball thirty-digit-color" id="pattern-pos4-ball4-container"><span id="pattern-pos4-ball4" class="ball-number"></span></div>
+                        <div class="pattern-count-container"><span class="pattern-count" id="pattern-pos4-count"> x 0</span></div>
+                    </div>
+                </div>
+
+                <div class="patterns-container">
+                    <div class="patterns-balls-container">
+                        <div class="ball results-ball single-digit-color" id="pattern-pos5-ball1-container"><span id="pattern-pos5-ball1" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball ten-digit-color" id="pattern-pos5-ball2-container"><span id="pattern-pos5-ball2" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball twenty-digit-color" id="pattern-pos5-ball3-container"><span id="pattern-pos5-ball3" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball thirty-digit-color" id="pattern-pos5-ball4-container"><span id="pattern-pos5-ball4" class="ball-number"></span></div>
+                        <div class="pattern-count-container"><span class="pattern-count" id="pattern-pos5-count"> x 0</span></div>
+                    </div>
+                </div>
+
+                <div class="patterns-container">
+                    <div class="patterns-balls-container">
+                        <div class="ball results-ball single-digit-color" id="pattern-pos6-ball1-container"><span id="pattern-pos6-ball1" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball ten-digit-color" id="pattern-pos6-ball2-container"><span id="pattern-pos6-ball2" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball twenty-digit-color" id="pattern-pos6-ball3-container"><span id="pattern-pos6-ball3" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball thirty-digit-color" id="pattern-pos6-ball4-container"><span id="pattern-pos6-ball4" class="ball-number"></span></div>
+                        <div class="pattern-count-container"><span class="pattern-count" id="pattern-pos6-count"> x 0</span></div>
+                    </div>
+                </div>
+
+                <div class="patterns-container">
+                    <div class="patterns-balls-container">
+                        <div class="ball results-ball single-digit-color" id="pattern-pos7-ball1-container"><span id="pattern-pos7-ball1" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball ten-digit-color" id="pattern-pos7-ball2-container"><span id="pattern-pos7-ball2" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball twenty-digit-color" id="pattern-pos7-ball3-container"><span id="pattern-pos7-ball3" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball thirty-digit-color" id="pattern-pos7-ball4-container"><span id="pattern-pos7-ball4" class="ball-number"></span></div>
+                        <div class="pattern-count-container"><span class="pattern-count" id="pattern-pos7-count"> x 0</span></div>
+                    </div>
+                </div>
+
+                <div class="patterns-container">
+                    <div class="patterns-balls-container">
+                        <div class="ball results-ball single-digit-color" id="pattern-pos8-ball1-container"><span id="pattern-pos8-ball1" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball ten-digit-color" id="pattern-pos8-ball2-container"><span id="pattern-pos8-ball2" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball twenty-digit-color" id="pattern-pos8-ball3-container"><span id="pattern-pos8-ball3" class="ball-number"></span></div>
+                        <span class="divider">-</span>
+                        <div class="ball results-ball thirty-digit-color" id="pattern-pos8-ball4-container"><span id="pattern-pos8-ball4" class="ball-number"></span></div>
+                        <div class="pattern-count-container"><span class="pattern-count" id="pattern-pos8-count"> x 0</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-container">
+        <h1 class="section-heading">About</h1>
+
+        <p class="about-information">
+            This website is a personal project on building a site using native HTML, CSS, and JavaScript, without
+            any CSS frameworks such as Bootstrap, or Javascript platforms such as Angular, or React.
+            <br/><br/>
+            I hope you enjoy the site as much as I enjoyed putting it together :)
+        </p>
+
+    </section>
+
+    <script src="./scripts/index-bundle.js"></script>
+</body>
+</html>

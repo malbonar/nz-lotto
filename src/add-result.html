@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/add-results.css" />
+    <title>NZ Lotto Stats - Add Results</title>
+</head>
+<body>
+    
+    <div id="login-form" class="login-modal-backdrop">
+        <div class="login-container">
+            <div class="login-user-input">
+                <div class="form-group">
+                    <label for="login-username" class="form-group-label">Username</label>
+                    <input type="text" id="login-username" />
+                </div>
+                <div class="form-group">
+                    <label for="login-password" class="form-group-label">Password</label>
+                    <input type="password" id="login-password" />
+                </div>
+                <button id="login-btn" disabled>Login</button>
+            </div>
+        </div>
+    </div>
+    <div class="arc"></div>
+
+    <div class="add-result-container">
+        <h1 class="center add-result-container__header">Add Lotto Result</h1>
+        <form class="center add-lotto-result-form">
+            <div class="draw-date-container form-group">
+                <!--<label class="form-control" for="result-date">Draw Date</label>-->
+                <input id="resultDateInput" name="resultDate" class="form-control"  type="date" />
+            </div>
+            <div class="lotto-balls-container">
+                <div class="lotto-ball-input-container">
+                    <!--<label class="form-control" for="ball1">Ball 1</label>-->
+                    <input name="ball1" class="lotto-ball-input form-control" type="number" min="1" max="40" />
+                </div>
+                <div class="lotto-ball-input-container">
+                    <!--<label class="form-control" for="ball2">Ball 2</label>-->
+                    <input name="ball2" class="lotto-ball-input form-control" type="number" min="1" max="40" />
+                </div>
+                <div class="lotto-ball-input-container">
+                    <!--<label class="form-control" for="ball2">Ball 3</label>-->
+                    <input name="ball3" class="lotto-ball-input form-control" type="number" min="1" max="40" />
+                </div>
+                <div class="lotto-ball-input-container">
+                    <!--<label class="form-control" for="ball2">Ball 4</label>-->
+                    <input name="ball4" class="lotto-ball-input form-control" type="number" min="1" max="40" />
+                </div>
+                <div class="lotto-ball-input-container">
+                    <!--<label class="form-control" for="ball2">Ball 5</label>-->
+                    <input name="ball5" class="lotto-ball-input form-control" type="number" min="1" max="40" />
+                </div>
+                <div class="lotto-ball-input-container">
+                    <!--<label class="form-control" for="ball2">Ball 6</label>-->
+                    <input name="ball6" class="lotto-ball-input form-control" type="number" min="1" max="40" />
+                </div>
+                <div class="lotto-ball-input-container">
+                    <!--<label class="form-control" for="bonusBall">Bonus Ball</label>-->
+                    <input name="bonusBall" class="lotto-ball-input form-control bonusball" type="number" min="1" max="40" />
+                </div>
+                <div class="lotto-ball-input-container">
+                    <!--<label class="form-control" for="powerBall">Power Ball</label>-->
+                    <input name="powerBall" class="lotto-ball-input form-control powerball" type="number" min="1" max="10" />
+                </div>
+            </div>
+            <div>
+                <button class="add-draw-result-btn">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-backdrop hide"></div>
+
+    <div class="saved-confirmation-container hide">
+        <span class="saved-confirmation-info">Saved</span>
+        <button class="saved-confirmation-btn">OK</button>
+    </div>
+
+    <script src="./scripts/addresult-bundle.js"></script>
+</body>
+</html>

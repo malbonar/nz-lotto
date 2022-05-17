@@ -1,0 +1,517 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    color: #3f3f46;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    /* font-size: 10px; */
+    /* 10px / 16px = 0.625 = 62.5%
+    /* this is % of users default browser font size */
+    font-size: 62.5%; /* so we can use rem i.e 1rem = default font size so 1 rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    font-family: 'EXO 2', 'Roboto Mono', sans-serif;
+    overflow: hidden;
+}
+
+@media(max-width: 1180px) {
+    body {
+        overflow: auto;
+    }
+}
+
+h1 {
+    cursor: default;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.section-heading {
+    font-size: 5rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* nav menu */
+.hamburger-menu {
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    width: 3rem;
+    height: 3rem;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: right 0.5s;
+}
+
+.hamburger-menu.change  {
+    right: 33rem;
+}
+
+.line {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #334155;
+    box-shadow: 0.1rem 0.2rem rgba(0,0,0,0.2);
+    transition: color 0.3s;
+}
+
+.line.change  {
+    background-color: #fef6c8;
+}
+
+.sidebar {
+    width: 40rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -40rem;
+    background-color: #6d1a36;
+    z-index: 199;
+    transition: right 0.5s;
+}
+
+.change .sidebar {
+    right: 0;
+}
+
+.menu {
+    position: absolute;
+    top: 40%;
+    left: 50%;    
+    transform: translate(-50%, -50%);
+}
+
+.menu-item {
+    text-align: center;
+    padding: 1.6rem;
+}
+
+.menu-link {
+    font-size: 4rem;
+    font-family: 'Roboto Mono';
+    color: #fef6c8;
+}
+/* end menu */
+
+.description {
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Roboto Mono';
+    line-height: 2rem;
+}
+
+.background-image {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    opacity: 0.4;
+    transition: opacity 1s;
+}
+
+/** START LANDING PAGE **/
+.section-1 .section-heading {
+    text-align: left;
+    padding: 10rem 0 2rem 5rem;
+}
+
+.section-1 .background-image {
+    top: 0;
+    padding-left: 5rem;
+}
+
+.section-1 .description-wrapper {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    padding: 5rem 0 15rem 5rem;
+}
+
+.section-1 .description {
+    max-width: 40rem;
+}
+
+.find-numbers-btn {
+    color: #fef6c8;
+    background: #6d1a36;
+    width: 15rem;
+    height: 5rem;
+    border: none;
+    font-size: 1.6rem;
+    font-family: 'Roboto Mono';
+    text-transform: uppercase;
+    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.2);
+    box-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 3rem;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 1.7rem;
+}
+
+.section-1 .balls-container {
+    background: #9dcdc0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+    border-color: #3f524d;
+    border-width: 2px 0 2px 0;
+    border-style: solid;
+    position: absolute;
+    width: 100%;
+    bottom: 5rem;
+}
+
+.section-1 .ball {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at 33px 33px, #fefce8, #ca8a04); 
+    transition: all 0.5s;
+    box-shadow: 0.2rem 0.5rem 0.5rem #4c4315;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    user-select: none; /* prevent blue highlighting */
+}
+
+/* remove ball container on main landing page if screen size less than minimum */
+@media(max-height: 400px) {
+    .section-1 .balls-container {
+        transform: scale(0);
+    }
+}
+
+/* reduce height of ball container when not much screen height */
+@media(max-height: 600px) {
+    .section-1 .balls-container {
+        padding: 0;
+    }
+}
+
+@media(max-width: 450px) {
+    .section-1 .ball {
+        height: 5rem;
+    }
+}
+
+@media(min-width: 451px) and (max-width: 499px) {
+    .section-1 .ball {
+        height: 6rem;
+    }
+}
+
+@media(min-width: 500px) and (max-width: 549px) {
+    .section-1 .ball {
+        height: 7rem;
+    }
+}
+
+@media(min-width: 550px) and (max-width: 600px) {
+    .section-1 .ball {
+        height: 8rem;
+    }
+}
+
+@media(min-width: 601px) and (max-width: 650px) {
+    .section-1 .ball {
+        height: 9rem;
+    }
+}
+
+@media(max-width: 768px) {
+    .find-numbers-btn {
+        width: 25rem;
+    }
+    .background-image {
+        opacity: 0.1;
+    }
+}
+
+@media(min-width: 769px) and (max-width: 1200px) {
+    .background-image {
+        opacity: 0.2;
+    }
+}
+
+.section-1 .ball-number {
+    font-size: 3.2rem;
+    font-family: 'Roboto Mono';
+    font-weight: 600;
+    color: #7c314a;
+    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.2);
+}
+/** END LANDING PAGE **/
+
+/** START PATTERNS SECTION **/
+/* overall container styles */
+.stats-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.stats-container .background-image {
+    top: 120vh;
+    right: 0;
+}
+
+.stats-container .section-heading {
+    text-align: center;
+    padding: 3rem;
+}
+
+.stats-container .description-wrapper {
+    padding: 2.5rem 0 2.5rem 5rem;
+}
+
+.stats-container .description {
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.stats-layout {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.stats-container .ball .ball-number {    
+    font-size: 1.6rem;
+    font-weight: 600;
+    user-select: none;
+}
+
+/* common styles to multiple stats items containers */
+.results-ball {
+    height: 3rem;
+    width: 3rem;
+    padding: 1.5rem;
+    background-color: #eeeeee;
+    border-radius: 50%;
+    border: 3px solid #5e7b53;
+    text-align: center;
+    margin: 5px;
+    /* this centers the text inside this circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-container .ball.power-ball {
+    border: 3px solid #6d1a36;
+}
+
+.single-digit-color {
+    border-color: #2D82B7;
+}
+
+.ten-digit-color {
+    border-color: #AF4608;
+}
+
+.twenty-digit-color {
+    border-color: #5e7b53;
+}
+
+.thirty-digit-color {
+    border-color: #6d1a36;
+}
+
+/* stats container item styles e.g. draw results, common numbers, patterns columns */
+.stats-layout-container-item {
+    display: flex;
+    flex-direction: column;
+    width: 38rem;
+    background-color: #9dcdc0;
+    border-radius: 5px;
+    padding:1px;
+    margin-left: 5px;
+}
+
+.stats-layout-container-item .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    padding: 1rem;
+}
+
+.stats-layout-container-item .header .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    cursor:default;
+}
+
+/* draw results stats items styles */
+.draw-result-date {
+    font-weight: 500;
+    font-size: 1.4rem;
+    padding: 5px;
+    color: #332d0e;
+    user-select: none;
+}
+
+.draw-results-header {
+    justify-content: space-between;
+}
+
+.draw-results-move-date {
+    font-size: 2.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+.draw-results-container {
+    background-color: #fef6c8;
+    display: flex;
+    flex-direction: column;
+    /*border-radius: 10px;*/
+    margin: 1px;
+}
+
+.draw-result-balls-container {
+    display: flex;
+}
+
+.bonus-ball {
+    position: relative;
+}
+
+.bonus-ball::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background-color: #cab339;
+    left: -9px;
+}
+
+/* common pairs specific styles */
+.common-pairs-header {
+    justify-content: center;
+}
+
+.common-pair-container {
+    background-color: #fef6c8;
+    display: flex;
+    flex-direction: column;
+    margin: 1px;
+}
+
+.common-pair-container {
+    background-color: #fef6c8;
+}
+
+.common-pair-balls-container {
+    display: flex; /* put the balls on the same line */
+    justify-content: center; /* center child items */
+}
+
+.common-pair-count-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+}
+
+.common-pair-count {
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding: 5px;
+    color: #332d0e;
+    cursor: default;
+}
+
+/* patterns specific styles */
+.paterns-description {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 500;
+    margin-left: -2.6rem;
+    margin-bottom: 1rem;
+}
+
+.patterns-balls-container {
+    display: flex;
+    justify-content: center;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.pattern-count-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pattern-count {
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding: 5px;
+    color: #332d0e;
+    cursor: default;
+}
+
+/** END PATTERNS SECTION **/
+
+/** START ABOUT SECTION **/
+.about-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fef6c8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-container .section-heading {
+    text-align: left;
+    padding: 10rem 0 2rem 5rem;
+}
+
+.about-container .background-image {
+    top: 220vh;
+    padding-left: 5rem;
+}
+
+.about-information {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2rem;
+    font-family: 'Roboto Mono';
+    padding: 5rem 0 15rem 5rem;
+    max-width: 80rem;
+}
+
+/** END ABOUT SECTION **/
+
