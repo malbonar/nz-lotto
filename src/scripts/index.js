@@ -64,7 +64,9 @@ const firebaseController = (function() {
                 return [];
             } else {
                 const pairs = snapshot.docs.map(commonPair => {
-                    return { ball1: commonPair.data().ball1, ball2: commonPair.data().ball2, count: 1  };
+                    return { 
+                        ball1: Number(commonPair.data().ball1), 
+                        ball2: Number(commonPair.data().ball2), count: 1  };
                 });
                 return pairs;
             }
