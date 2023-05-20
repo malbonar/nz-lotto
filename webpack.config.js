@@ -33,7 +33,7 @@ module.exports = {
             ],
         }),
     ],
-    externals: ({context, request}, callback) => {
+    /*externals: ({context, request}, callback) => {
         // Don't copy the secrets config file object         
         if (request === './firebase-config.json') {
             fs.stat(path.join(context, request), (err, stat) => {
@@ -47,7 +47,7 @@ module.exports = {
         } else {
             callback();
         }
-    },
+    },*/
     /*
     module: {
         rules: [
