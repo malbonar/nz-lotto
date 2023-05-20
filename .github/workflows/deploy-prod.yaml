@@ -13,3 +13,4 @@ jobs:
           repoToken: "#{{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NZ_LOTTO }}"
           projectId: nz-lotto
+          channelId: "merge-${{ github.event.number }}"
