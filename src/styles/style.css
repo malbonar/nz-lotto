@@ -362,6 +362,7 @@ section {
     font-size: 2.2rem;
     font-weight: 700;
     cursor:default;
+    margin-right: -2rem;
 }
 
 /* draw results stats items styles */
@@ -374,14 +375,29 @@ section {
 }
 
 .draw-results-header {
-    justify-content: space-between;
+    justify-content: space-between !important;
+}
+
+.draw-results-move-date-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 2rem;
+    cursor: pointer;
 }
 
 .draw-results-move-date {
-    font-size: 2.2rem;
-    font-weight: 800;
+    font-size: 3rem;
+    font-weight: 900;
     cursor: pointer;
     transform: rotate(90deg);
+    margin-top: 5px;
+    user-select: none;
+}
+
+.draw-results-move-date-right {
+    margin-left: 1rem;
 }
 
 .draw-results-container {

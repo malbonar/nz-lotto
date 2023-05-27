@@ -127,25 +127,31 @@ const firebaseController = (function() {
 })();
 
 const uiController = (function() {
+    let dateRangeStartIndex = 1;
 
     function displayResults(draws, startIndex) {
-        for(let x = startIndex; x <= startIndex + 5; x++) {
-            let resDate = draws[x-1].date.toDateString();
+        for(let x = 1; x <= 6; x++) {
+            let resDate = draws[startIndex-1 + (x - 1)].date.toDateString();
             document.querySelector(`#draw${x}-date`).innerHTML = resDate.slice(0, resDate.length -5);
-            const balls = draws[x-1].balls.split('-');
+            const balls = draws[startIndex-1 + (x - 1)].balls.split('-');
             document.querySelector(`#draw${x}-ball1`).innerHTML = balls[0];
             document.querySelector(`#draw${x}-ball2`).innerHTML = balls[1];
             document.querySelector(`#draw${x}-ball3`).innerHTML = balls[2];
             document.querySelector(`#draw${x}-ball4`).innerHTML = balls[3];
             document.querySelector(`#draw${x}-ball5`).innerHTML = balls[4];
             document.querySelector(`#draw${x}-ball6`).innerHTML = balls[5];
-            document.querySelector(`#draw${x}-bonus-ball`).innerHTML = draws[x-1].bonus;
-            document.querySelector(`#draw${x}-power-ball`).innerHTML = draws[x-1].powerBall;
+            document.querySelector(`#draw${x}-bonus-ball`).innerHTML = draws[startIndex-1 + (x - 1)].bonus;
+            document.querySelector(`#draw${x}-power-ball`).innerHTML = draws[startIndex-1 + (x - 1)].powerBall;
 
             for(let borderColorLoop = 0; borderColorLoop < 6; borderColorLoop++) {
                 addBallBorderColorClass(Number(balls[borderColorLoop]), `#draw${x}-ball${borderColorLoop+1}-container`);
             }
         }
+        dateRangeStartIndex = startIndex;
+    }
+
+    const displayResultsWithNewDateRange = (draws, startIndex) => {
+        displayResults(draws, startIndex);
     }
 
     function displayCommonPairs(commonPairs) {
@@ -170,6 +176,11 @@ const uiController = (function() {
     }
 
     function addBallBorderColorClass(value, selector) {
+        document.querySelector(selector).classList.remove('single-digit-color');
+        document.querySelector(selector).classList.remove('ten-digit-color');
+        document.querySelector(selector).classList.remove('twenty-digit-color');
+        document.querySelector(selector).classList.remove('thirty-digit-color');
+
         if (value <= 10) {
             document.querySelector(selector).classList.add('single-digit-color');
         } else if (value > 10 && value <= 20) {
@@ -198,6 +209,21 @@ const uiController = (function() {
         });
     }
 
+    const moveDrawDate = (allDraws, isForward) => {
+        let newStartIndex = dateRangeStartIndex;
+
+        if (isForward) {
+            if (dateRangeStartIndex === 1) {
+                return;
+            }
+            newStartIndex = dateRangeStartIndex - 1;
+        } else {
+            newStartIndex = dateRangeStartIndex + 1;
+        }
+
+        displayResultsWithNewDateRange(allDraws, newStartIndex);
+    }
+
     return {
         displayResults: function(draws, startIdx) {
             return displayResults(draws, startIdx);
@@ -209,6 +235,10 @@ const uiController = (function() {
 
         displayPatterns: function(patterns) {
             return displayPatterns(patterns);
+        },
+
+        moveDrawDate: function(draws, direction) {
+            return moveDrawDate(draws, direction);
         },
 
         addEventHandlers: function() {
@@ -230,6 +260,12 @@ const siteController = (function(db, ui) {
 
         const draws = db.fetchLottoDraws();
         draws.then(d => {
+            document.querySelector('#draw-result-move-date-range-forward').addEventListener('click', () => {
+                ui.moveDrawDate(d, false);
+            });
+            document.querySelector('#draw-result-move-date-range-back').addEventListener('click', () => {
+                ui.moveDrawDate(d, true);
+            });
             ui.displayResults(d, dateRangeStartIndex);
         });
 
