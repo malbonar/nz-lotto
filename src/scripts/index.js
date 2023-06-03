@@ -112,17 +112,9 @@ const firebaseController = (function() {
     }
 
     return {
-        fetchLottoDraws: function() {
-            return getDraws();
-        },
-
-        fetchNumberPatterns: function() {
-            return getPatterns();
-        },
-
-        fetchCommonPairs: function() {
-            return getCommonPairs();
-        }
+        fetchLottoDraws: getDraws,
+        fetchNumberPatterns: getPatterns,
+        fetchCommonPairs: getCommonPairs
     }
 })();
 
@@ -224,29 +216,19 @@ const uiController = (function() {
         displayResultsWithNewDateRange(allDraws, newStartIndex);
     }
 
+    const addEventHandlers = () => {
+        addMenuClickEventHandler();
+        addCloseEventForMenuOptionClickEventHandler('home-link');
+        addCloseEventForMenuOptionClickEventHandler('numbers-link');
+        addCloseEventForMenuOptionClickEventHandler('about-link');
+    }
+
     return {
-        displayResults: function(draws, startIdx) {
-            return displayResults(draws, startIdx);
-        },
-
-        displayCommonPairs: function(commonPairs) {
-            return displayCommonPairs(commonPairs);
-        },
-
-        displayPatterns: function(patterns) {
-            return displayPatterns(patterns);
-        },
-
-        moveDrawDate: function(draws, direction) {
-            return moveDrawDate(draws, direction);
-        },
-
-        addEventHandlers: function() {
-            addMenuClickEventHandler();
-            addCloseEventForMenuOptionClickEventHandler('home-link');
-            addCloseEventForMenuOptionClickEventHandler('numbers-link');
-            addCloseEventForMenuOptionClickEventHandler('about-link');
-        }
+        displayResults: displayResults,
+        displayCommonPairs: displayCommonPairs,
+        displayPatterns: displayPatterns,
+        moveDrawDate: moveDrawDate,
+        addEventHandlers: addEventHandlers
     }
 
 })();
@@ -329,9 +311,7 @@ const siteController = (function(db, ui) {
     }
 
     return {
-        init: function() {
-            return init();
-        }
+        init: init
     }
 
 })(firebaseController, uiController);
