@@ -1,21 +1,24 @@
 {
   "name": "nz-lotto",
   "version": "1.0.0",
-  "description": "",
+  "description": "View statistics for the New Zealand lotto draw",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\"",
-    "build": "webpack"
+    "build-dev": "webpack --config webpack.config.js --mode development",
+    "build-prod": "webpack --config webpack.config.js --mode production",
+    "start-dev": "webpack serve --config webpack.config.js --mode development --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Malcolm Bonar",
   "license": "ISC",
   "devDependencies": {
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.6.0",
     "style-loader": "^3.3.1",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
     "firebase": "^9.6.8"

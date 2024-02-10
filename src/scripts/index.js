@@ -3,6 +3,8 @@ import {
     getFirestore, collection, getDocs, serverTimestamp
 } from 'firebase/firestore';
 
+import '../styles/style.css';
+
 const firebaseController = (function() {
     const firebaseConfig = {
         apiKey: "api-key-here",

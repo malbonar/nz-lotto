@@ -2,6 +2,9 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, Timestamp } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
 
+import '../styles/style.css';
+import '../styles/add-results.css';
+
 const firebaseController = (function() {
     const firebaseConfig = {
         apiKey: "api-key-here",
