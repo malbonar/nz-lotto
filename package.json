@@ -6,7 +6,7 @@
   "scripts": {
     "build-dev": "webpack --config webpack.config.js --mode development",
     "build": "webpack --config webpack.config.js --mode production",
-    "start-dev": "webpack serve --config webpack.config.js --mode development --open",
+    "start-dev": "webpack serve --config webpack.config.js --mode development --open"
   },
   "keywords": [],
   "author": "Malcolm Bonar",
