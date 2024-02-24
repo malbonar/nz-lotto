@@ -141,6 +141,14 @@ const uiController = (function() {
                 addBallBorderColorClass(Number(balls[borderColorLoop]), `#draw${x}-ball${borderColorLoop+1}-container`);
             }
         }
+        // display latest draw on home page
+        const drawBalls = draws[0].balls.split('-');
+        document.getElementById('ball-1').innerHTML = drawBalls[0];
+        document.getElementById('ball-2').innerHTML = drawBalls[1];
+        document.getElementById('ball-3').innerHTML = drawBalls[2];
+        document.getElementById('ball-4').innerHTML = drawBalls[3];
+        document.getElementById('ball-5').innerHTML = drawBalls[4];
+        document.getElementById('ball-6').innerHTML = drawBalls[5];
         dateRangeStartIndex = startIndex;
     }
 
