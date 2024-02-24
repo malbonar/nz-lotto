@@ -2,6 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'development',
@@ -11,8 +13,14 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name]-bundle.js',
+        filename: '[name].[contenthash].js',
         clean: true
+    },
+    optimization: {
+        concatenateModules: false,
+        splitChunks: {
+            chunks: 'all'
+        }
     },
     devServer: {
         static: './dist'
@@ -38,12 +46,14 @@ module.exports = {
                 to: path.resolve(__dirname, 'dist')
             }],
         }),
+        //new BundleAnalyzerPlugin({ }) // shows the analysis pages of dependencies in bundles
+        new CssExtractPlugin(), // webpack will generate separate CSS bundle files rather than embed in html files
     ],
     module: {
         rules: [{
             test: /\.css$/,
             use: [
-                { loader: 'style-loader' },
+                { loader: CssExtractPlugin.loader },
                 { loader: 'css-loader' }
             ]
         }]
